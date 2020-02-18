@@ -1,11 +1,9 @@
 const functions = require("firebase-functions");
+
 const admin = require("firebase-admin");
 
-const serviceAccount = require("path/to/serviceAccountKey.json");
-
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://firebook-19768.firebaseio.com"
+  credential: admin.credential.cert(require("../key/ServiceAccountKey.json"))
 });
 
 exports.helloWorld = functions.https.onRequest((request, response) => {
