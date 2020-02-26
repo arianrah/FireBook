@@ -31,7 +31,6 @@ exports.createPosts = functions.https.onRequest((request, response) => {
     userHandle: request.body.userHandle,
     createdAt: admin.firestore.Timestamp.fromDate(new Date())
   };
-
   admin
     .firestore()
     .collection("posts")
